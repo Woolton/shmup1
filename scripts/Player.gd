@@ -2,16 +2,14 @@ extends Ship
 
 
 # Declare member variables here. Examples:
-# var a = 2
-# var b = "text"
-var direction = Vector2.ZERO
-
+var direction
 var screen_size = Vector2.ZERO
+#signal shoot
 
 func movement(delta):
 	#general
 	var speed = 150
-	var direction = Vector2.ZERO
+	direction = Vector2.ZERO
 	if Input.is_action_pressed("right"):
 		direction.x += 1
 	if Input.is_action_pressed("left"):
@@ -30,6 +28,7 @@ func movement(delta):
 func action():
 	if Input.is_action_pressed("shotA"):
 		print("shot A")
+		emit_signal("shoot")
 	if Input.is_action_pressed("shotB"):
 		print("shot B")
 	if Input.is_action_pressed("bomb"):
@@ -38,7 +37,12 @@ func action():
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	screen_size = get_viewport_rect().size
-	print(screen_size)
+	print("screen size: " , screen_size)
+	health = 1
+	speed= 150
+	.addGun(Gun, gunCount)
+	print("Gun count: ", gunCount)
+	print("Gun count(true): " , guns.size())
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
