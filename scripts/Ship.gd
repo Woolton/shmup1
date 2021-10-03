@@ -15,7 +15,7 @@ func bomb():
 func addGun(PackedScene, GunCount): #adds guns based on count
 	for i in range(0,GunCount):
 		guns.append(Gun.instance())#add gun to array
-		self.add_child(Gun.instance())#add gun to ship
+		self.add_child(guns[i])#add gun to ship
 		print("%d connected" % i)
 		self.connect("shoot", guns[i], "_on_Ship_Shoot")#assign signal to all array members
 # Called when the node enters the scene tree for the first time.
