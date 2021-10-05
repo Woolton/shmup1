@@ -1,0 +1,14 @@
+{
+  "version": "0.0",
+  "description": "beta for a shmup",
+  "homepage": "https://google.com",
+  "url": "https://github.com/Woolton/shmup1/releases/download/beta/shmup.exe",
+  "license": "GPL-2.0-or-later",
+  "bin": "shmup.exe",
+  "shortcuts": [
+      [
+          "shmup.exe",
+          "SHMUP"
+      ]
+  ]
+}
